@@ -19,7 +19,7 @@ namespace CheeseMVC.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            List<Cheese> cheeses = context.Cheeses.ToList();
+            List<Cheese> cheeses = context.Chiz.ToList();
 
             return View(cheeses);
         }
@@ -43,7 +43,7 @@ namespace CheeseMVC.Controllers
                     Type = addCheeseViewModel.Type
                 };
 
-                context.Cheeses.Add(newCheese);
+                context.Chiz.Add(newCheese);
                 context.SaveChanges();
 
                 return Redirect("/Cheese");
@@ -55,7 +55,7 @@ namespace CheeseMVC.Controllers
         public IActionResult Remove()
         {
             ViewBag.title = "Remove Cheeses";
-            ViewBag.cheeses = context.Cheeses.ToList();
+            ViewBag.cheeses = context.Chiz.ToList();
             return View();
         }
 
@@ -64,8 +64,8 @@ namespace CheeseMVC.Controllers
         {
             foreach (int cheeseId in cheeseIds)
             {
-                Cheese theCheese = context.Cheeses.Single(c => c.ID == cheeseId);
-                context.Cheeses.Remove(theCheese);
+                Cheese theCheese = context.Chiz.Single(c => c.ID == cheeseId);
+                context.Chiz.Remove(theCheese);
             }
 
             context.SaveChanges();

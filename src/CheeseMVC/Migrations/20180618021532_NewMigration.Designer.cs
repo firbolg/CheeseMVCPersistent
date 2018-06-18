@@ -12,9 +12,10 @@ using System;
 namespace CheeseMVC.Migrations
 {
     [DbContext(typeof(CheeseDbContext))]
-    partial class CheeseDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180618021532_NewMigration")]
+    partial class NewMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,19 +35,7 @@ namespace CheeseMVC.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Chiz");
-                });
-
-            modelBuilder.Entity("CheeseMVC.Models.CheeseCategory", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Categories");
+                    b.ToTable("Cheeses");
                 });
 #pragma warning restore 612, 618
         }
