@@ -10,7 +10,7 @@ namespace CheeseMVC.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Categories",
+                name: "Categorees",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -19,14 +19,14 @@ namespace CheeseMVC.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.ID);
+                    table.PrimaryKey("PK_Categorees", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Categorees");
         }
     }
 }
